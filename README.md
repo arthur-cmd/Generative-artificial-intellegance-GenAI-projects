@@ -1,4 +1,4 @@
-This repository consists of various codes involving Generative ai 🤖
+ 🤖This repository consists of various codes involving Generative ai 🤖
 
 1)trustAi.py
   its a bot that receives and responds to  questions,with a proper chat UI.This program is made by langchain,ollama,llama 3.1,streamlit and python
