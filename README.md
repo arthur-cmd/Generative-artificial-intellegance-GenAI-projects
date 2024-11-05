@@ -10,5 +10,6 @@ This repository consists of various codes involving Generative ai
 
    Its a trained llm based on RAG approach,which has a chat UI for people to use.This program is made by langchain,streamlit,ollama,beautifulsoap,webbaseloader,llama3.1 and chroma db
 
+
    
 
