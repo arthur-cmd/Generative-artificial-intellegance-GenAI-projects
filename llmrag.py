@@ -4,19 +4,27 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import OllamaEmbeddings
+import streamlit as st
 
 
-website = 'https://www.marktechpost.com/2024/04/21/coconut-a-high-quality-large-scale-dataset-for-next-gen-segmentation-models/'
+
+
+
+#website = 'https://www.marktechpost.com/2024/04/21/coconut-a-high-quality-large-scale-dataset-for-next-gen-segmentation-models/'
+website='https://docs.google.com/document/d/e/2PACX-1vRLuOf0XBJ1CUXsQrPVnqOp-yLYWpdDQoRYRf3YqOKKRmLs9uzRS6idpLXsJKaiGEFliGNWj0918ifW/pub'
+
 
 # Load the data
-loader = WebBaseLoader(
-    web_paths=(f"{website}",),
-    bs_kwargs=dict(
-        parse_only=bs4.SoupStrainer(
-            class_=("td-post-content tagdiv-type", "td-post-header", "td-post-title")
-        )
-    ),
-)
+#loader = WebBaseLoader(
+#    web_paths=(f"{website}",),
+#    bs_kwargs=dict(
+#        parse_only=bs4.SoupStrainer(
+#            class_=("td-post-content tagdiv-type", "td-post-header", "td-post-title")
+#        )
+#    ),
+#)
+
+loader = WebBaseLoader(web_paths=(f"{website}",))
 
 
 docs = loader.load()
@@ -47,7 +55,8 @@ def rag_chain(question):
 
 
 # Use the RAG App
-Question = "What is COCO benchmark?"
+#Question = "What is COCO benchmark?"
+Question="what is MGODI?"
 result = rag_chain(f"{Question}")
 print(f"Question : {Question}")
 print(f"Response : {result}")
